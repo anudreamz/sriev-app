@@ -1,65 +1,98 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
+      {/* Navigation */}
+      <nav className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-green-600">sriev.com</h1>
+            </div>
+            <div className="flex items-center space-x-4">
+              <button className="text-gray-600 hover:text-green-600">
+                Sign In
+              </button>
+              <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+                Sign Up
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">
+              Find EV Charging Stations in <span className="text-green-600">Sri Lanka</span>
+            </h1>
+            <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+              Discover available charging stations, book your time slot, and power your electric vehicle journey across Sri Lanka
+            </p>
+            
+            {/* Search Box */}
+            <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-2">
+              <div className="flex gap-2">
+                <input 
+                  type="text" 
+                  placeholder="Enter your location or destination..."
+                  className="flex-1 px-4 py-3 border-0 focus:ring-0 focus:outline-none text-lg"
+                />
+                <button className="bg-green-600 text-white px-8 py-3 rounded-xl hover:bg-green-700 font-semibold">
+                  Find Stations
+                </button>
+              </div>
+            </div>
+            
+            {/* Quick Stats */}
+            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto mt-16">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600">50+</div>
+                <div className="text-gray-600">Charging Stations</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600">100+</div>
+                <div className="text-gray-600">Available Chargers</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-600">24/7</div>
+                <div className="text-gray-600">Booking Available</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">How It Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🔍</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Find Stations</h3>
+              <p className="text-gray-600">Search for available charging stations near your location or along your route</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">⏰</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Book Your Slot</h3>
+              <p className="text-gray-600">Choose your preferred time slot and confirm your booking</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🔋</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Charge & Go</h3>
+              <p className="text-gray-600">Arrive at your booked time, charge your vehicle, and continue your journey</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-  );
+  )
 }
